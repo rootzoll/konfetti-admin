@@ -27,7 +27,7 @@ function KonfettiApi($http, $uibModal) {
         var modalInstance = $uibModal.open({
             animation: true,
             backdrop: 'static',
-            template: '<div style="width: 200px;margin: 12px;">Backend Admin Password:'+
+            template: '<div style="width: 200px;margin: 12px;">Backend Admin Password: (as set in API config)'+
             ' <input ng-model="password" type="password" style="margin-top: 10px;" onkeypress="(window.event.charCode==13)?document.getElementById(\'login\').click():void(0);"/>'+
             '<button ng-click="setPassword(password)" id="login" type="button" class="btn btn-primary btn-md" style="margin-top:12px;">'+
             'Login</button></div>',

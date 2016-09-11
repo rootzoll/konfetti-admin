@@ -1,10 +1,9 @@
 {
-  "name": "rdash-angular",
+  "name": "konfetti-admin",
   "version": "0.0.1",
-  "author": "Elliot Hesp",
+  "author": "Christian Rotzoll",
   "contributors": [
-    "Leonel Samayoa <leonel.e.samayoa@gmail.com> (http://gobliip.com)",
-    "Ricardo Pascua <rdpascua@outlook.com>"
+    "Based on rdash-angular@0.0.1"
   ],
   "devDependencies": {
     "bower": "^1.3.9",
