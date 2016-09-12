@@ -1,6 +1,12 @@
 node {
     def imageName = 'konfetti/admin'
 
+    // branches to build docker image and publish
+    def branch = env.BRANCH_NAME
+    def develop = 'develop'
+    def production = 'master'
+    def dockerBranches = [develop, production]
+
     stage 'Install Bower & Gulp'
     checkout scm
     // Get the nodeJs tool.
