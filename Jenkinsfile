@@ -1,4 +1,6 @@
 node {
+    def imageName = 'konfetti/admin'
+
     stage 'Install Bower & Gulp'
     checkout scm
     // Get the nodeJs tool.
@@ -16,4 +18,27 @@ node {
 
     stage 'Gulp Build'
     sh 'gulp build'
+
+    echo "Git Branch : ${branch}"
+    if (dockerBranches.contains(branch)) {
+        echo "Building docker container for branch: ${branch}"
+
+        docker.withRegistry('https://docker.io', 'docker-credentials') {
+
+            def dockerImg;
+            // ========================================================================
+            stage 'Build Docker image'
+            // ========================================================================
+            echo "build image : ${imageName}:latest"
+            dockerImg = docker.build("${imageName}:latest")
+
+            // ========================================================================
+            stage 'Tag and push image'
+            // ========================================================================
+            echo "tag image"
+            dockerImg.tag()
+            echo "push image"
+            dockerImg.push()
+        }
+    }
 }
