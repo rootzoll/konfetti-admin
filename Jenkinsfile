@@ -13,7 +13,6 @@ node {
     // ** NOTE: This 'NodeJs' maven tool must be configured in the global configuration.
     def nodeHome = tool 'NodeJs'
     env.PATH="${env.PATH}:${nodeHome}/bin"
-    sh 'npm install bower'
     sh 'npm install gulp'
 
     stage 'Npm Install'
