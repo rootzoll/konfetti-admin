@@ -8,8 +8,12 @@ function KonfettiApi($http, $uibModal) {
     var apiUrlProductionServer = "https://konfetti-prod.testserver.de/konfetti/api";
 
     // SET WHICH SERVER SHOULD BE ACTIVE
-
     var apiUrl = apiUrlDevelopmentServer; // choose from above
+
+    // enforce local dev server, when running on localhost/docker
+    if (window.location.indexOf("http://localhost")==0) {
+        apiUrl = apiUrlLocalDevelopment;
+    }
 
     // SECURITY TESTING
     if (apiUrlProductionServer.indexOf("https")!=0) {
