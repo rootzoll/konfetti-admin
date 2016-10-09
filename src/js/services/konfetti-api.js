@@ -364,6 +364,35 @@ function KonfettiApi($http, $uibModal) {
                 request(win, fail);
             });
         },
+        deleteUser : function(userID, win, fail) {
+
+            var request = function(win, fail) {
+                var config = getBasicHttpHeaderConfig();
+                config.method = 'DELETE';
+                config.url = apiUrl + '/account/'+ userID;
+                // WIN
+                var successCallback = function (response) {
+                    win();
+                };
+                var failCallback = function (err) {
+                    if (isPasswordWrong(err)) {
+                        // try again - recursive
+                        modalAlert("PASSWORD IS WRONG", function () {
+                            waitForPassword(function () {
+                                request(win, fail);
+                            });
+                        });
+                    } else {
+                        fail();
+                    }
+                };
+                $http(config).then(successCallback, failCallback);
+            };
+
+            waitForPassword(function(){
+                request(win, fail);
+            });
+        },
         modalAlert : function(text, win) {
             modalAlert(text, win);
         },

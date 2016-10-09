@@ -24,6 +24,22 @@ function TablesCtrl($scope, KonfettiApi, $location) {
         alert("TODO: Give Options on User("+id+")");
     };
 
+    $scope.deleteUser = function(id) {
+
+        if (confirm("REALLY DETELE USER "+id+" ?")) {
+
+            KonfettiApi.deleteUser(id, function() {
+                // WIN
+                alert("OK");
+                $scope.refreshUsers();
+            }, function(){
+                // FAIL
+                alert("FAIL - was not able to delete user");
+            });
+
+        }
+    };
+
     $scope.refreshParties = function () {
 
         $scope.parties = null;
