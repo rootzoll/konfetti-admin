@@ -12,7 +12,7 @@ function KonfettiApi($http, $uibModal) {
 
     // enforce local dev server, when running on localhost/docker
     if (window.location.href.indexOf("http://localhost")==0) {
-        apiUrl = apiUrlLocalDevelopment;
+        //apiUrl = apiUrlLocalDevelopment;
     }
 
     // SECURITY TESTING

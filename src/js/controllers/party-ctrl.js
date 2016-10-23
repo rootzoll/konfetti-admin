@@ -16,7 +16,7 @@ function PartyCtrl($scope, $stateParams, KonfettiApi) {
         name : "",
         detailText: "",
         contact: "",
-        reviewLevel: 0,
+        reviewLevel: "REVIEWLEVEL_NONE",
         visibility : 0,
         newRequestMinKonfetti : 1,
         welcomeBalance: 0,
@@ -36,21 +36,21 @@ function PartyCtrl($scope, $stateParams, KonfettiApi) {
     });
 
     $scope.reviewOptions = [
-        {id: 0, name: 'NONE - no review process, all tasks are public by posting'},
-        {id: 1, name: 'TASKS - review on initial task creation, but user is free to post any additional info later'},
-        {id: 2, name: 'EVERYTHING - all content visible to the public needs to get thru review process'}
+        {id: "REVIEWLEVEL_NONE", name: 'NONE - no review process, all tasks are public by posting'},
+        {id: "REVIEWLEVEL_TASKS", name: 'TASKS - review on initial task creation, but user is free to post any additional info later'},
+        {id: "REVIEWLEVEL_EVERYTHING", name: 'EVERYTHING - all content visible to the public needs to get thru review process'}
     ];
 
     $scope.typeOptions = [
-        {id: 0, name: 'PUBLIC - for everybody to see an join'},
-        {id: 1, name: 'PRIVATE - for everybody to see but needs invitation code to join'},
-        {id: 2, name: 'HIDDEN - can just be seen and joined by invitation code'}
+        {id: "VISIBILITY_PUBLIC", name: 'PUBLIC - for everybody to see an join'},
+        {id: "VISIBILITY_PRIVATE", name: 'PRIVATE - for everybody to see but needs invitation code to join'},
+        {id: "VISIBILITY_HIDDEN", name: 'HIDDEN - can just be seen and joined by invitation code'}
     ];
 
     $scope.spendOptions = [
-        {id: 0, name: 'DEACTIVATED - for everybody to see an join'},
-        {id: 2, name: 'JUST EARNED - only the konfetti someone earned doing a task can be transfered'},
-        {id: 1, name: 'ALL - all konfetti can be transfered between users'}
+        {id: "SENDKONFETTIMODE_DISABLED", name: 'DEACTIVATED - for everybody to see an join'},
+        {id: "SENDKONFETTIMODE_JUSTEARNED", name: 'JUST EARNED - only the konfetti someone earned doing a task can be transfered'},
+        {id: "SENDKONFETTIMODE_ALL", name: 'ALL - all konfetti can be transfered between users'}
     ];
     
     $scope.partyWhitelistArray2CSV = function() {
