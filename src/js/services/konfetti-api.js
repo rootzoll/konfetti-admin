@@ -3,8 +3,8 @@ angular.module('RDash').factory('KonfettiApi', ['$http', '$uibModal', KonfettiAp
 function KonfettiApi($http, $uibModal) {
 
     // available server options
-    var apiUrlLocalDevelopment = "http://localhost:9000/konfetti/api";
-    var apiUrlDevelopmentServer = "http://fourcores2016.cloudapp.net:9000/konfetti/api";
+    var apiUrlLocalDevelopment = "http://localhost:8280/konfetti/api";
+    var apiUrlDevelopmentServer = "http://fourcores2016.cloudapp.net:8280/konfetti/api";
     var apiUrlProductionServer = "https://konfetti-prod.testserver.de/konfetti/api";
 
     // SET WHICH SERVER SHOULD BE ACTIVE
