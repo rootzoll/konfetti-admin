@@ -158,7 +158,7 @@ function KonfettiApi($http, $uibModal) {
             var request = function(win, fail) {
                 var config = getBasicHttpHeaderConfig();
                 config.method = 'GET';
-                config.url = apiUrl + '/party';
+                config.url = apiUrl + '/party/all';
                 // WIN
                 var successCallback = function (response) {
                     win(response.data);
