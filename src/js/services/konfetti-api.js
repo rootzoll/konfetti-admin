@@ -4,11 +4,11 @@ function KonfettiApi($http, $uibModal) {
 
     // available server options
     var apiUrlLocalDevelopment = "http://localhost:8280/konfetti/api";
-    var apiUrlDevelopmentServer = "http://fourcores2016.cloudapp.net:8280/konfetti/api";
-    var apiUrlProductionServer = "https://konfetti-prod.testserver.de/konfetti/api";
+    var apiUrlDevelopmentServer = "http://konfettiapp.de/konfetti/api";
+    var apiUrlProductionServer = "https://konfettiapp.de/konfetti/api";
 
     // SET WHICH SERVER SHOULD BE ACTIVE
-    var apiUrl = apiUrlDevelopmentServer; // choose from above
+    var apiUrl = apiUrlProductionServer; // choose from above
 
     // enforce local dev server, when running on localhost/docker
     if (window.location.href.indexOf("http://localhost")==0) {
